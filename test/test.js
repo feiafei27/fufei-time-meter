@@ -6,9 +6,11 @@ var instance = new timeMeter({
     console.log(e);
   }
 })
-instance.resultInterceptor.add(function (result) {
+let myInterceptor = instance.resultInterceptor.add(function (result) {
   result.second = result.milliseconds / 1000;
   return result;
 })
+
+instance.resultInterceptor.remove(myInterceptor);
 
 instance.start();
