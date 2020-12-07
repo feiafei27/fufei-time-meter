@@ -1,0 +1,35 @@
+{
+  "name": "fufei-time-meter",
+  "version": "1.0.0",
+  "description": "A simple timer library, you can start, pause, continue and reset the timer.",
+  "main": "./dist/fufei-time-meter.js",
+  "files": [
+    "dist",
+    "lib",
+    "test",
+    "util"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feiafei27/fufei-time-meter.git"
+  },
+  "keywords": [
+    "time-meter",
+    "light",
+    "simple"
+  ],
+  "author": {
+    "name": "fufei",
+    "email": "2543736927@qq.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feiafei27/fufei-time-meter/issues"
+  },
+  "homepage": "https://github.com/feiafei27/fufei-time-meter#readme",
+  "devDependencies": {
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
