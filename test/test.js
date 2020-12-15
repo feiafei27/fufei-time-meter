@@ -1,4 +1,4 @@
-var timeMeter = require('../index');
+var timeMeter = require("../index");
 
 var instance = new timeMeter({
   intervalSpace:10,

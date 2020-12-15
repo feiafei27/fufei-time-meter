@@ -13,12 +13,18 @@ npm i fufei-time-meter
 ## Quick Start
 
 ```javascript
-import TimeMeter from "fufei-time-meter";
+var TimeMeter = require("fufei-time-meter");
 
 let timeMeterInstance = new TimeMeter({
 	// callback function
 	timeUpdate(e){
-		// The structure of e: {milliseconds: 240, timeMeterStatus: 1}
+		// The structure of e: 
+        //{ milliseconds: 1680,
+        //  timeMeterStatus: 1,
+        //  second: 1.68,
+        //  hourMinuteSecond: '00:00:01',
+        //  hourMinuteSecondMs: '00:00:01 680',
+        //  lastThreeChar: '680' }
 		console.log(e);
 	}
 })
@@ -41,7 +47,13 @@ timeMeterInstance.reset();
 ```javascript
 // callback function
 timeUpdate(e){
-    // The structure of e: {milliseconds: 240, timeMeterStatus: 1}
+    // The structure of e: 
+    //{ milliseconds: 1680,
+    //  timeMeterStatus: 1,
+    //  second: 1.68,
+    //  hourMinuteSecond: '00:00:01',
+    //  hourMinuteSecondMs: '00:00:01 680',
+    //  lastThreeChar: '680' }
     // The timer has three states
     // 0: initial state
     // 1: Timing status
@@ -62,7 +74,6 @@ let timeMeterInstance = new TimeMeter({
     milliseconds: 0,
 	// callback function
 	timeUpdate(e){
-		// The structure of e: {milliseconds: 4000, timeMeterStatus: 1}
 		console.log(e);
 	}
 })
@@ -79,12 +90,13 @@ let timeMeterInstance = new TimeMeter({
 	// callback function
 	timeUpdate(e){
 		// The structure of e:
-        // {
-        // 		milliseconds: 4000, 
-        //		second: 4,
-        //		message: 'New property added in interceptor'
-        // 		timeMeterStatus: 1,
-    	// }
+        //{ milliseconds: 1680,
+        //  timeMeterStatus: 1,
+        //  second: 1.68,
+        //  hourMinuteSecond: '00:00:01',
+        //  hourMinuteSecondMs: '00:00:01 680',
+        //  message: 'New property added in interceptor',
+        //  lastThreeChar: '680' }
 		console.log(e);
 	}
 })
@@ -92,7 +104,6 @@ let timeMeterInstance = new TimeMeter({
 // Add interceptor
 const myInterceptor = timeMeterInstance.resultInterceptor.add(function (result) {   
     result.message = 'New property added in interceptor';
-    result.second = result.milliseconds / 1000;
 	return result;
 })
 
