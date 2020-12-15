@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "pub": "npm publish",
-    "github": "git add * && git commit -m 'f' && git push",
+    "github": "git add * && git commit -m 'f' && git push origin master",
     "total:upload": "npm run github && npm run pub"
   },
   "repository": {
